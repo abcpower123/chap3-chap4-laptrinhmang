@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Ex3 {
 
 	public static void main(String[] args) {
+		System.out.println("---------Ex3 start-------");
 		String address;
 		System.out.print("Input address: ");
 		Scanner sc=new Scanner(System.in);
@@ -24,8 +25,9 @@ public class Ex3 {
 			System.out.println("Localhost ip: "+localAddress.getHostAddress());
 			
 		} catch (IOException e) {
-			System.err.println("URL not vallid");
+			System.out.println("URL not vallid");
 			e.printStackTrace();;
 		}
+		System.out.println("---------Ex3 exitted-------");
 	}
 }

@@ -10,9 +10,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Ex6 {
+	
 	static Scanner sc=new Scanner(System.in);
 	static ArrayList<HistoryWeb> history=new ArrayList<>();
 	public static void main(String[] args) {
+		System.out.println("---------Ex6 started-------");
 		while(true) {
 			System.out.println("Choose acction: '1' is accessing website, '2' is show history,'3' exit");
 			System.out.print("Choose acction (1/2/3):");
@@ -28,13 +30,13 @@ public class Ex6 {
 			}
 			else System.out.println("You not choose 1/2 or 3, please try again.");
 		}
-		System.out.println("Program exitted!");
+		System.out.println("---------Ex6 exitted-------");
 	}
 	private static void updateHistory(InetAddress ia) {
 		boolean checkExist=false;
 		for (HistoryWeb historyWeb : history) {
 			if(historyWeb.getAddress().getHostAddress().equals(ia.getHostAddress())) {
-				historyWeb.setLastVisit(new Date());
+				historyWeb.addDate(new Date());
 				checkExist=true;
 				return;
 			}
@@ -49,7 +51,7 @@ public class Ex6 {
 			System.out.println("-------------------------------");
 			System.out.println("Host name: "+historyWeb.getAddress().getHostName());
 			System.out.println("Host address: "+historyWeb.getAddress().getHostAddress());
-			System.out.println("Last visited: "+historyWeb.getLastVisit());
+			historyWeb.showAllDateVisited();
 			System.out.println("-------------------------------");
 		}
 	}
@@ -72,7 +74,7 @@ public class Ex6 {
 			
 			
 		} catch (IOException e) {
-			System.err.println("URL not vallid");
+			System.out.println("URL not vallid");
 		}
 	}
 }

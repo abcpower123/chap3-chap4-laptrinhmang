@@ -1,8 +1,10 @@
-package ex1;
+package ex2;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
+
+import ex1.DocSo;
 
 public class Threadxulysongsong extends Thread {
 	Socket s;
@@ -35,11 +37,24 @@ public class Threadxulysongsong extends Thread {
 	}
 
 	private String process(String recived) {
-		// check correct input
-		for (char a : recived.toCharArray()) {
-			if (a < '0' || a > '9')
-				return "Không phải là số nguyên";
+		char operator=recived.charAt(0);
+		int num1=Integer.parseInt(recived.substring(2,recived.lastIndexOf(' ')));
+		int num2=Integer.parseInt(recived.substring(recived.lastIndexOf(' ')+1,recived.length()-1));
+		int result=0;
+		switch (operator) {
+		case '+':
+			result=num1+num2;
+			break;
+		case '-':
+			result=num1-num2;
+			break;
+		case '*':
+			result=num1*num2;
+			break;
+		default:
+			result=num1/num2;
+			break;
 		}
-		return DocSo.ChuyenSangChu(recived);
+		return ""+result;
 	}
 }

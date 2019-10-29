@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 public class Ex2 {
 	public static void main(String[] args) {
+		System.out.println("---------Ex2 start-------");
 		String url;
 		System.out.print("Input url: ");
 		Scanner sc=new Scanner(System.in);
@@ -22,11 +23,12 @@ public class Ex2 {
 		
 			Scanner s = new Scanner(is);
 			while (s.hasNext()) {
-				System.out.println(s.next());
+				System.out.println(s.nextLine());
 			}
 			
 		} catch (IOException e) {
-			System.err.println("URL not vallid");
+			System.out.println("URL not vallid");
 		}
+		System.out.println("---------Ex2 exitted-------");
 	}
 }

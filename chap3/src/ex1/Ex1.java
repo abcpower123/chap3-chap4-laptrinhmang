@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Ex1 {
 
 	public static void main(String[] args) {
+		System.out.println("---------Ex1 start-------");
 		String url;
 		System.out.print("Input url: ");
 		Scanner sc=new Scanner(System.in);
@@ -18,8 +19,9 @@ public class Ex1 {
 			System.out.println("Port num: "+u.getPort());
 			System.out.println("Protocol: "+u.getProtocol());
 		} catch (MalformedURLException e) {
-			System.err.println("URL not vallid");
+			System.out.println("URL not vallid");
 		}
+		System.out.println("---------Ex1 exitted-------");
 	}
 
 }

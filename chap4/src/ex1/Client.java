@@ -9,11 +9,14 @@ import java.util.Scanner;
 
 public class Client {
 
+	public final static int port = 1134;
+	
 	public static void main(String args[]){
+		System.out.print("Input a number: ");
 		Scanner sc=new Scanner(System.in);
 		String input=sc.nextLine();
 		try {
-			Socket s = new Socket("localhost",1134);		// Kết nối đến Server
+			Socket s = new Socket("localhost",port);		// Kết nối đến Server
 			
 			DataOutputStream os = new DataOutputStream(s.getOutputStream());
 			DataInputStream is=new DataInputStream(s.getInputStream());

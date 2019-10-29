@@ -15,6 +15,7 @@ public class Ex5 {
 	static ArrayList<InetAddress> listBlock=null;
 	
 	public static void main(String[] args) {
+		System.out.println("---------Ex5 start-------");
 		String input;
 		Scanner sc=new Scanner(System.in);
 		input=sc.nextLine();
@@ -41,7 +42,7 @@ public class Ex5 {
 			e.printStackTrace();
 		}
 
-       
+		System.out.println("---------Ex5 exitted-------");
 	}
 
 	private static boolean checkAddress(InetAddress ia) {

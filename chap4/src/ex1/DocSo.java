@@ -47,13 +47,6 @@ public class DocSo {
         }
     };
 
-    public static void main(String[] args) throws ParseException {
-        String tien = "154154451154214";
-        String kq = ChuyenSangChu(tien);
-       
-        System.out.println(kq);
-
-    }
 
     public static String ChuyenSangChu(String m) {
         String kq = "";

@@ -13,10 +13,10 @@ public class ClientTCP {
 	public static void main(String args[]){
 		sc=new Scanner(System.in);
 		
-		System.out.print("Choose action (1:login; 2:register;3: exit) :");
+		
 		
 		while (true) {
-		
+			System.out.print("Choose action (1:login; 2:register;3: exit) :");
 		String input=sc.nextLine();
 		
 		switch(input) {

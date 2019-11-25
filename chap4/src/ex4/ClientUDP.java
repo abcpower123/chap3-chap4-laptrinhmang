@@ -2,10 +2,13 @@ package ex4;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientTCP {
+public class ClientUDP {
 
 	public final static int port = 1134;
 	public final static String hostname = "localhost";
@@ -51,16 +54,17 @@ public class ClientTCP {
 	}
 	private static boolean sendData(String result) {
 		try {
-			Socket s = new Socket("localhost",1134);		// Kết nối đến Server
-			
-			DataOutputStream os = new DataOutputStream(s.getOutputStream());
-			DataInputStream is=new DataInputStream(s.getInputStream());
-			
-			os.writeUTF(result);
-			
-			String feedback=is.readUTF();
-			
-			s.close();
+			 DatagramSocket datagramSocket = new DatagramSocket();		// Kết nối đến Server
+			 InetAddress address = InetAddress.getByName("localhost");
+			 byte[] b = result.getBytes();
+             DatagramPacket packetGui = new DatagramPacket(b, b.length, address, port);
+             datagramSocket.send(packetGui);
+             
+             byte[] buffer = new byte[50000];
+             DatagramPacket packetNhan = new DatagramPacket(buffer, buffer.length);
+             datagramSocket.receive(packetNhan);
+             String feedback = new String(packetNhan.getData(), 0, packetNhan.getLength());
+            
 			if(feedback.equals("T")) return true;
 			else return false;
 		} catch(Exception ie){

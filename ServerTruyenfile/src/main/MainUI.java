@@ -30,6 +30,7 @@ public class MainUI extends JFrame {
 	public JTextPane txtLog;
 	public CustomListModel clm;
 	public TCPServcices services;
+	public JButton btnStopServer;
 	private JButton btnStartListener;
 	/**
 	 * Launch the application.
@@ -103,17 +104,19 @@ public class MainUI extends JFrame {
 				services=new TCPServcices(Integer.parseInt(txtPort.getText()),MainUI.this);
 				services.start();
 				btnStartListener.setEnabled(false);
+				btnStopServer.setEnabled(true);
 			}
 		});
 		btnStartListener.setBounds(311, 122, 111, 29);
 		contentPane.add(btnStartListener);
 		
-		JButton btnStopServer = new JButton("Stop server");
+		 btnStopServer = new JButton("Stop server");
 		btnStopServer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				services.disconnectAll();
 				btnStopServer.setEnabled(false);
 				btnStartListener.setEnabled(true);
+				services.disconnectAll();
+				
 			}
 		});
 		btnStopServer.setBounds(444, 122, 111, 29);

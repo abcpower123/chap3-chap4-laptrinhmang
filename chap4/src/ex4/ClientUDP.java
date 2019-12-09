@@ -54,12 +54,13 @@ public class ClientUDP {
 	}
 	private static boolean sendData(String result) {
 		try {
+			//gui request l-abc-123
 			 DatagramSocket datagramSocket = new DatagramSocket();		// Kết nối đến Server
 			 InetAddress address = InetAddress.getByName("localhost");
 			 byte[] b = result.getBytes();
              DatagramPacket packetGui = new DatagramPacket(b, b.length, address, port);
              datagramSocket.send(packetGui);
-             
+             //nhan kq tu server la T / F
              byte[] buffer = new byte[50000];
              DatagramPacket packetNhan = new DatagramPacket(buffer, buffer.length);
              datagramSocket.receive(packetNhan);

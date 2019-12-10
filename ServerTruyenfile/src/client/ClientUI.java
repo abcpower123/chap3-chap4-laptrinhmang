@@ -124,7 +124,7 @@ public class ClientUI extends JFrame {
 				
 			}
 		});
-		btnConnectToServer.setBounds(178, 134, 155, 51);
+		btnConnectToServer.setBounds(178, 134, 171, 51);
 		contentPane.add(btnConnectToServer);
 		
 		btnDisconnectServer = new JButton("Disconnect server");
@@ -149,7 +149,7 @@ public class ClientUI extends JFrame {
 				
 			}
 		});
-		btnDisconnectServer.setBounds(387, 134, 147, 51);
+		btnDisconnectServer.setBounds(387, 134, 163, 51);
 		contentPane.add(btnDisconnectServer);
 		
 		JLabel lblLog = new JLabel("Log");

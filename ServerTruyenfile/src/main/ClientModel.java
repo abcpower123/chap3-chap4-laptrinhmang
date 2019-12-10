@@ -120,7 +120,7 @@ public class ClientModel extends Thread{
 			
 			JFileChooser jx=new JFileChooser();
 			jx.showOpenDialog(services.ui);
-			services.ui.txtLog.setText(services.ui.txtLog.getText()+jx.getSelectedFile().getAbsolutePath());
+			services.ui.txtLog.setText(services.ui.txtLog.getText()+jx.getSelectedFile().getAbsolutePath()+"\n");
 			
 			FileInfo f=new FileInfo();
 			f.setStatus("file");
